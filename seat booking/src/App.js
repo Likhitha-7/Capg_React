@@ -1,13 +1,26 @@
 import React, {useState} from "react"
+
 import "./App.css"
 
 import MovieSelector from "./components/MovieSelector"
 import SeatAvailability from "./components/SeatAvailability"
 import SeatMatrix from "./components/SeatMatrix"
 import PriceCalculator from "./components/PriceCalculator"
+import { Button } from "./components/Button"
+// import {
+//     BrowserRouter as Router,
+    
+//     Route,
+//     Link
+// } from "react-router-dom";
+
+import payment from "./components/payment"
+
+
 import GithubLogo from './components/GithubLogo'
 
 import MovieContext from './contexts/MovieContext'
+
 
 const App = () => {
 
@@ -27,14 +40,26 @@ const App = () => {
 	return (
 		<div className="main container">
 			<MovieContext.Provider value={{ movies, changeState: EditMovies }}>
-			
-				<MovieSelector />
-				<SeatMatrix />
-				<SeatAvailability />
-				<PriceCalculator />
+			<MovieSelector />
+			<SeatMatrix />
+			<SeatAvailability />
+			<PriceCalculator />
 			</MovieContext.Provider>
+			
+			<Button>Book Now</Button>
+			
+		
+			
+			
+			
+			
 		</div>
+		
+		
+		
 	)
+	
 }
+
 
 export default App
